@@ -1,1 +1,1 @@
-# mjcollege-chatbot-backend
+# MJCET AI
