@@ -1,11 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MJCET AI Chatbot</title>
+
+  <!-- ✅ Favicon from logo.png -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind CDN (warning in console is safe to ignore for now) -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -27,21 +32,26 @@
     }
   </style>
 </head>
+
 <body class="bg-gray-900 text-white min-h-screen flex flex-col">
   <header class="w-full p-4 bg-blue-900 flex items-center justify-center">
     <img src="logo.png" alt="MJCET Logo" class="h-12 mr-4" />
     <h1 class="text-2xl font-semibold">MJCET AI Chatbot</h1>
   </header>
+
   <main class="flex-1 w-full max-w-3xl p-4 overflow-y-auto mx-auto" id="chat-container"></main>
+
   <form id="chat-form" class="w-full max-w-3xl flex items-center gap-2 p-4 bg-gray-800 mx-auto">
     <button type="button" id="mic-btn" class="text-2xl p-2 bg-gray-700 rounded-xl">🎤</button>
     <input id="user-input" type="text" placeholder="Ask about MJCET..." class="flex-1 p-3 rounded-xl bg-gray-700 text-white" required />
     <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl">➡️</button>
     <button type="button" id="speak-btn" class="text-2xl p-2 bg-gray-700 rounded-xl">🔊</button>
   </form>
+
   <audio id="notify-sound" preload="auto">
     <source src="notify.mp3" type="audio/mpeg">
   </audio>
+
   <script>
     const backendUrl = "https://mjcet-ai.onrender.com/chat";
     const chatContainer = document.getElementById("chat-container");
